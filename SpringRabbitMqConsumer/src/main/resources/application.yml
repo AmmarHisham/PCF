@@ -11,6 +11,8 @@ rmq:
   exchange: jsa.direct
   routingkey: jsa.routingkey
   queue: notification
+  exchangeOrder: adsales.exchange.order
+  routingkeyOrder: adsales.routekey.order    
       
 management:
   security:
