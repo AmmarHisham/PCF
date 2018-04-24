@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: service-producer
+
+
+management:
+  security:
+    enabled: false
+    
+security:
+  basic:
+    enabled: false    
