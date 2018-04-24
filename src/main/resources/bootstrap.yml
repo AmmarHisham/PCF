@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: service-circuitbreaker
+  cloud:
+    services:
+      registrationMethod: route  
+      
+management:
+  security:
+    enabled: false
+    
+security:
+  basic:
+    enabled: false
+    
+ribbon:
+  IsSecure: false
+      
