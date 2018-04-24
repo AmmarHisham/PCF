@@ -1,0 +1,174 @@
+/*final String OLD_FORMAT = "MM/dd/yyyy";
+	    	final String NEW_FORMAT = "yyyy-MM-dd";
+			    
+		    if(!StringUtils.isEmpty(params.getStartDate())){
+		    		
+	
+		    	String oldDateString = params.getStartDate();
+		    	String newDateString=null;
+		    	SimpleDateFormat sdf = new SimpleDateFormat(OLD_FORMAT);
+		    	Date d;
+				try {
+					d = sdf.parse(oldDateString);
+					sdf.applyPattern(NEW_FORMAT);
+			    	newDateString = sdf.format(d);
+				} catch (ParseException e) {
+					
+				}
+		    	
+		    	queryBuilder.must(QueryBuilders.rangeQuery("startDate.keyword").gte(newDateString));
+			 }
+		    
+		    if(!StringUtils.isEmpty(params.getEndDate())){
+		    	String oldDateString = params.getEndDate();
+		    	String newDateString=null;
+		    	SimpleDateFormat sdf = new SimpleDateFormat(OLD_FORMAT);
+		    	Date d;
+				try {
+					d = sdf.parse(oldDateString);
+					sdf.applyPattern(NEW_FORMAT);
+			    	newDateString = sdf.format(d);
+				} catch (ParseException e) {
+					
+				}
+		    	queryBuilder.must(QueryBuilders.rangeQuery("endDate.keyword").lte(newDateString));
+		    }
+		    
+		    if(params.getAdvertiser()!=null && params.getAdvertiser().size()>0){
+		    	queryBuilder.must( QueryBuilders.termsQuery("advertiser.id", params.getAdvertiser()) );
+		    }
+		    
+		    if(params.getAccountExec()!=null && params.getAccountExec().size()>0){
+		    	queryBuilder.must( QueryBuilders.termsQuery("accountExce.id", params.getAccountExec()) );
+		    }
+		    
+		    if(params.getDealYear()!=null && params.getDealYear().size()>0){
+		    	queryBuilder.must( QueryBuilders.termsQuery("dealYear.id", params.getDealYear()) );
+		    }
+		    
+		    if(params.getMarketPlace()!=null && params.getMarketPlace().size()>0){
+		    	queryBuilder.must( QueryBuilders.termsQuery("marketPlace.id", params.getMarketPlace()) );
+		    }
+		    
+		    if(params.getPlanClass()!=null && params.getPlanClass().size()>0){
+		    	queryBuilder.must( QueryBuilders.termsQuery("planClass.id", params.getPlanClass()) );
+		    }
+		    
+		    if(params.getPlanStatus()!=null && params.getPlanStatus().size()>0){
+		    	queryBuilder.must( QueryBuilders.termsQuery("planStatus.id", params.getPlanStatus()) );
+		    }
+		    
+		 	String[] gSarray = (params.getGuaranteedStatus()!=null && params.getGuaranteedStatus().size()>0)?params.getGuaranteedStatus().toArray(new String[0]):null;
+		    String gs =null;
+		    if(!StringUtils.isEmpty(gSarray) && gSarray.length==1){
+		     if("3111001".equals(gSarray[0])){
+		    	 gs="1415000";
+			 }
+			 else  if("3111000".equals(gSarray[0])){
+				 gs="1415001";
+			 }
+		    }
+		    
+		    if(!StringUtils.isEmpty(gs )){
+		    	queryBuilder.must( QueryBuilders.termsQuery("guaranteedCodeObj.id", gs) );
+		    }
+		    
+		    if(params.getRatingStream()!=null && params.getRatingStream().size()>0){
+		    	queryBuilder.must( QueryBuilders.termsQuery("ratingStream.id", params.getRatingStream()) );
+		    }
+		    
+		    if(params.getOffice()!=null && params.getOffice().size()>0){
+		    	queryBuilder.must( QueryBuilders.termsQuery("office.id", params.getOffice()) );
+		    }
+		    
+		    if(params.getDivision()!=null && params.getDivision().size()>0){
+		    	queryBuilder.must( QueryBuilders.termsQuery("division.id", params.getDivision()) );
+		    }
+	
+		    if(params.getSubDivision()!=null && params.getSubDivision().size()>0){
+		    	queryBuilder.must( QueryBuilders.termsQuery("subDivision.id", params.getSubDivision()) );
+		    }
+		    
+		    if(params.getPlanSubStatus()!=null && params.getPlanSubStatus().size()>0){
+		    	queryBuilder.must( QueryBuilders.termsQuery("planSubStatus", params.getPlanSubStatus()) );
+		    }
+		    
+		    if(params.getTargetGroup()!=null && params.getTargetGroup().size()>0){
+		    	queryBuilder.must( QueryBuilders.termsQuery("targetGroup.id", params.getTargetGroup()) );
+		    }
+		    
+		    if(params.getAgency()!=null && params.getAgency().size()>0){
+		    	queryBuilder.must(QueryBuilders.nestedQuery("agencies", QueryBuilders.termsQuery("agencies.id", params.getAgency()),ScoreMode.Avg ));
+		    	
+		    	
+		    }
+		    
+		    if(params.getOffice()!=null && params.getOffice().size()>0){
+		    	queryBuilder.must(QueryBuilders.termsQuery("office.id", params.getOffice()));
+		    }
+		    
+		    
+		    
+		    if(params.getPlanStatusName()!=null && params.getPlanStatusName().size()>0){
+		    	queryBuilder.must( QueryBuilders.termsQuery("planStatus.name.keyword", params.getPlanStatusName()) );
+		    }*/
+		    
+		    
+		    
+		     /*String[] sortNamearray = reqParams.getSort()!=null?reqParams.getSort().toArray(new String[0]):null;
+		String[] sortTypearray = reqParams.getDir()!=null?reqParams.getDir().toArray(new String[0]):null;*/
+		
+		
+		//requestBuilder.addSort("id", SortOrder.ASC);
+		
+		/*if (sortNamearray != null) {
+			Map<String, String> gridFormMap = mapGridWithServer();
+			 for(int i=0;i<sortNamearray.length;i++){
+				 String sortNmae=gridFormMap.get(sortNamearray[i])!=null?gridFormMap.get(sortNamearray[i]):sortNamearray[i];
+				if (SortOrder.ASC.name().equalsIgnoreCase(sortTypearray[i])) {
+					requestBuilder.addSort(sortNmae+".keyword", SortOrder.ASC);
+					
+				} else if (SortOrder.DESC.name().equalsIgnoreCase(sortTypearray[i])) {
+					requestBuilder.addSort(sortNmae+".keyword", SortOrder.DESC);
+				}
+			 }
+			}*/
+			
+			
+			
+			
+			private List<String> channelName;
+	
+	private List<String> channelId;	
+	
+	private List<String> id;
+	
+	private List<String> name;
+	
+	private List<String> planVersionNumber;
+	
+	private List<String> targetGroupName;
+	
+	private List<String> ratingStreamName;
+	
+	private List<String> marketPlaceName;
+	
+	private List<String> planStatusName;
+	
+	private List<String> officeName;
+	
+	private List<String> planClassName;
+	
+	private List<String> divisionName;
+	
+	private List<String> subDivisionName;
+	
+	private List<String>  planApprovalStatusName;
+	
+	private List<String> brandName;
+	
+	private List<String> advertiserName;
+	
+	private List<String>  dealYearName;
+	
+	private List<String> accountExceName;

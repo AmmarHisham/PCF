@@ -1,0 +1,14 @@
+---
+applications:
+- name: plansearch-dev
+  instances: 1
+  memory: 2048M
+  path: ../ELasticSearch_Plan-0.0.1-SNAPSHOT.war
+  buildpack: https://github.com/cloudfoundry/java-buildpack#v4.6
+  host: plansearch-dev
+env:
+   CF_STAGING_TIMEOUT: 50
+   CF_STARTUP_TIMEOUT: 100      
+   SPRING_PROFILES_ACTIVE: dev
+   http_proxy: http://proxy.inbcu.com:80
+   https_proxy: http://proxy.inbcu.com:80

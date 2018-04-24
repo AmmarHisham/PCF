@@ -1,0 +1,35 @@
+spring:
+ profiles: "local"
+ data:
+  elasticsearch:
+   cluster-name: adsaleses
+   cluster-nodes: AOAAPLP00250.tfayd.com
+   properties.index.query.bool.max_clause_count: 10240
+   userName: 
+   password:
+indexname: "plan-dev"   
+---
+spring:
+ profiles: "dev"
+ data:
+  elasticsearch:
+   cluster-name: methodman_dev
+   cluster-nodes:  adsales-data-es-dev.inbcu.com
+   properties.index.query.bool.max_clause_count: 10240
+   userName: adsales-admin
+   password: BiktYG2HurW07S
+indexname: "plan-dev"        
+---
+spring:
+ profiles: "qa"
+---
+spring:
+ profiles: "stage"
+ data:
+  elasticsearch:
+   cluster-name: methodman_dev
+   cluster-nodes:  adsales-data-es-dev.inbcu.com
+   properties.index.query.bool.max_clause_count: 10240
+   userName: adsales-admin
+   password: BiktYG2HurW07S
+indexname: "plan-qa"
