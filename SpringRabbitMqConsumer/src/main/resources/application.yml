@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: service-rabbitmq-consumer
+
+rmq:
+  host: 100.126.52.16
+  port: 5672
+  username: d30ed2db-8775-4f5e-bdf8-106ccdfa230e
+  password: u79q1puu1peu0apm4o2tns33rp
+  vhost: a4e4cec9-9f48-4d3b-889a-f92db17dd02b
+  exchange: jsa.direct
+  routingkey: jsa.routingkey
+  queue: notification
+      
+management:
+  security:
+    enabled: false
+    
+security:
+  basic:
+    enabled: false
+    
+      
